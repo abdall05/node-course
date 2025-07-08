@@ -14,6 +14,8 @@ Thumbs.db
 # Env files
 **/.env
 **/.env.*
+**/*.env
+
 
 # ignore dist or build folders in all projects
 **/dist/
