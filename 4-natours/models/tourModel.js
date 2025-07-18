@@ -83,11 +83,9 @@ const tourSchema = new mongoose.Schema(
 //Document Middleware
 tourSchema.pre('save', function (next) {
   this.slug = slugify(this.name);
-  console.log(this);
   next();
 });
 tourSchema.post('save', function (doc, next) {
-  console.log(doc);
   next();
 });
 
@@ -98,10 +96,10 @@ tourSchema.pre(/^find/, function (next) {
   next();
 });
 
-tourSchema.post(/^find/, function (docs, next) {
-  console.log(`The query took ${Date.now() - this.start}ms`);
-  next();
-});
+// tourSchema.post(/^find/, function (docs, next) {
+//   console.log(`The query took ${Date.now() - this.start}ms`);
+//   next();
+// });
 
 //Agrregation Middleware
 tourSchema.pre('aggregate', function (next) {
